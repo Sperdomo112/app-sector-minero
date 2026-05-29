@@ -57,6 +57,6 @@ def lista_precios_view(request):
         request,
         "lista_precios.html",
         {
-            "precios": prices,
+            "precios": precios,
         },
     )
