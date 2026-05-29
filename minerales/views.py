@@ -10,7 +10,7 @@ def lista_precios_view(request):
     # ========================================================
     try:
         # Endpoint REAL de la Agencia Nacional de Minería (ANM)
-        url_api = "https://datos.gov.co/resource/8663-7p9a.json"
+        url_api = "https://www.datos.gov.co/api/v3/views/9gcr-rggw/query.json"
         respuesta = requests.get(url_api, timeout=5)
 
         if respuesta.status_code == 200:
