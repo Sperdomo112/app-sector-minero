@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Información Minera - Cotizaciones</title>
+    <!-- Importación de fuente PT Sans para estética del proyecto -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -99,6 +100,7 @@
         <h1>Sistema de Control Sector Minero</h1>
         <p class="subtitle">Módulo de analítica y auditoría de cotizaciones oficiales del gobierno colombiano</p>
 
+        <!-- SECCIÓN DE GRÁFICAS -->
         <h2>Tendencias del Mercado (Histórico)</h2>
         <div class="grid-graficas">
             {% for mineral, imagen_b64 in graficas.items %}
@@ -113,6 +115,7 @@
             {% endfor %}
         </div>
 
+        <!-- SECCIÓN DE TABLA CRUDA -->
         <h2>Historial de Registros Auditados</h2>
         <table>
             <thead>
@@ -128,7 +131,8 @@
                     <tr>
                         <td>{{ precio.fecha|date:"Y-m-d" }}</td>
                         <td style="font-weight: bold; color: #f8fafc;">{{ precio.nombre }}</td>
-                        <td><span class="badge-precio">${{ precio.precio }}</span></td>
+                        <!-- Aquí quedó corregido con precio_cop de tu modelo -->
+                        <td><span class="badge-precio">${{ precio.precio_cop }}</span></td>
                         <td style="color: #94a3b8;">{{ precio.unidad_medida }}</td>
                     </tr>
                 {% empty %}
