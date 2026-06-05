@@ -13,14 +13,6 @@ from .models import PrecioMineral
 
 def lista_precios_view(request):
     # ========================================================
-    # DETONADOR DE LIMPIEZA: Borra registros viejos incompatibles en Render
-    # ========================================================
-    try:
-        PrecioMineral.objects.all().delete()
-    except Exception as e:
-        print(f"⚠️ No se pudo vaciar la tabla: {str(e)}")
-
-    # ========================================================
     # 1. CONSUMO DE API Y ACTUALIZACIÓN EN BASE DE DATOS
     # ========================================================
     try:
